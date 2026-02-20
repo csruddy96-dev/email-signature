@@ -2,138 +2,157 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Levver Email Signature Comparison</title>
+  <title>Levver Email Signature Generator</title>
 </head>
 
-<body style="font-family: Arial, Helvetica, sans-serif; padding:60px; background:#f8f8f8;">
+<body style="font-family: Arial, Helvetica, sans-serif; padding:40px;">
 
-  <h1 style="margin-bottom:50px; font-weight:600;">
-    Levver Email Signature Comparison
-  </h1>
+  <h2>Levver Email Signature Generator</h2>
 
-  <table cellpadding="0" cellspacing="0" border="0" width="100%">
-    <tr>
+  <!-- ================= FORM ================= -->
 
-      <!-- ================= VERSION A ================= -->
-      <td width="50%" style="vertical-align: top; padding-right:40px;">
+  <div style="margin-bottom:30px;">
 
-        <h3 style="margin-bottom:25px; font-weight:600;">
-          Version A – Logo Left (5px)
-        </h3>
+    <div>
+      <label>Name</label><br>
+      <input type="text" id="nameInput" style="width:300px;">
+    </div>
 
-        <div style="background:#ffffff; padding:30px; border:1px solid #e5e5e5; display:inline-block;">
+    <div style="margin-top:10px;">
+      <label>Title</label><br>
+      <input type="text" id="titleInput" style="width:300px;">
+    </div>
 
-          <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif;">
-            <tr>
+    <div style="margin-top:10px;">
+      <label>Phone</label><br>
+      <input type="text" id="phoneInput" style="width:300px;">
+    </div>
 
-              <td style="vertical-align: top; padding: 5px 14px 0 0;">
-                <div style="width:35px;">
-                  <img
-                    src="https://cdn.prod.website-files.com/692b5f9aaf0da16ba4f8efc6/6944d4045a9fe6d96e1f668d_vv-webclip.png"
-                    alt="Levver"
-                    style="display:block; width:100%; height:auto; border:0; outline:none; text-decoration:none;"
-                  />
-                </div>
-              </td>
+    <div style="margin-top:10px;">
+      <label>Email</label><br>
+      <input type="text" id="emailInput" style="width:300px;">
+    </div>
 
-              <td style="vertical-align: top; padding: 0; color:#000000;">
+  </div>
 
-                <div style="font-size:15px; font-weight:600; line-height:20px;">
-                  Name
-                </div>
+  <!-- ================= PREVIEW ================= -->
 
-                <div style="font-size:14px; line-height:19px;">
-                  Title
-                </div>
+  <div style="margin-bottom:15px;">
+    <strong>Live Preview</strong>
+  </div>
 
-                <div style="font-size:14px; line-height:19px;">
-                  Levver
-                </div>
+  <!-- Visible preview box (not copied) -->
+  <div style="border:1px solid #ddd; padding:20px; display:inline-block;">
 
-                <div style="font-size:14px; line-height:19px;">
-                  <a href="#" style="color:#000000; text-decoration:none;">
-                    555-555-5555
-                  </a>
-                </div>
+    <!-- Only this div gets copied -->
+    <div id="signatureContent">
 
-                <div style="font-size:14px; line-height:19px;">
-                  <a href="#" style="color:#000000; text-decoration:none;">
-                    name@levver.io
-                  </a>
-                </div>
+      <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif;">
+        <tr>
 
-              </td>
+          <!-- Logo -->
+          <td style="vertical-align: top; padding: 5px 14px 0 0;">
+            <div style="width:35px;">
+              <img
+                src="https://cdn.prod.website-files.com/692b5f9aaf0da16ba4f8efc6/6944d4045a9fe6d96e1f668d_vv-webclip.png"
+                alt="Levver"
+                style="display:block; width:100%; height:auto; border:0; outline:none; text-decoration:none;"
+              />
+            </div>
+          </td>
 
-            </tr>
-          </table>
+          <!-- Text -->
+          <td style="vertical-align: top; padding: 0; color:#000000;">
 
-        </div>
+            <div id="sigName" style="font-size:15px; font-weight:600; line-height:20px;">
+              Name
+            </div>
 
-      </td>
+            <div id="sigTitle" style="font-size:14px; line-height:19px;">
+              Title
+            </div>
 
+            <div style="font-size:14px; line-height:19px;">
+              Levver
+            </div>
 
+            <div style="font-size:14px; line-height:19px;">
+              <a id="sigPhone"
+                 href="#"
+                 style="color:#000000 !important; text-decoration:none !important; -webkit-text-decoration:none !important; border:0; font-weight:normal;">
+                555-555-5555
+              </a>
+            </div>
 
-      <!-- ================= VERSION B ================= -->
-      <td width="50%" style="vertical-align: top; padding-left:40px;">
+            <div style="font-size:14px; line-height:19px;">
+              <a id="sigEmail"
+                 href="#"
+                 style="color:#000000 !important; text-decoration:none !important; -webkit-text-decoration:none !important; border:0; font-weight:normal;">
+                name@levver.io
+              </a>
+            </div>
 
-        <h3 style="margin-bottom:25px; font-weight:600;">
-          Version B – Logo Under Text
-        </h3>
+          </td>
 
-        <div style="background:#ffffff; padding:30px; border:1px solid #e5e5e5; display:inline-block;">
+        </tr>
+      </table>
 
-          <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; color:#000000;">
-            
-            <tr>
-              <td style="vertical-align: top; padding: 0;">
+    </div>
+  </div>
 
-                <div style="font-size:15px; font-weight:600; line-height:20px;">
-                  Name
-                </div>
+  <div style="margin-top:20px;">
+    <button onclick="copySignature()">Copy Signature</button>
+  </div>
 
-                <div style="font-size:14px; line-height:19px;">
-                  Title
-                </div>
+<script>
 
-                <div style="font-size:14px; line-height:19px;">
-                  Levver
-                </div>
+function formatPhone(value) {
+  const digits = value.replace(/\D/g, '');
 
-                <div style="font-size:14px; line-height:19px;">
-                  <a href="#" style="color:#000000; text-decoration:none;">
-                    555-555-5555
-                  </a>
-                </div>
+  if (digits.length <= 3) return digits;
+  if (digits.length <= 6) return digits.slice(0,3) + '-' + digits.slice(3);
+  return digits.slice(0,3) + '-' + digits.slice(3,6) + '-' + digits.slice(6,10);
+}
 
-                <div style="font-size:14px; line-height:19px;">
-                  <a href="#" style="color:#000000; text-decoration:none;">
-                    name@levver.io
-                  </a>
-                </div>
+function updateSignature() {
 
-              </td>
-            </tr>
+  const name = document.getElementById('nameInput').value || 'Name';
+  const title = document.getElementById('titleInput').value || 'Title';
+  const phoneRaw = document.getElementById('phoneInput').value;
+  const email = document.getElementById('emailInput').value || 'name@levver.io';
 
-            <tr>
-              <td style="padding-top:10px;">
-                <div style="width:35px;">
-                  <img
-                    src="https://cdn.prod.website-files.com/692b5f9aaf0da16ba4f8efc6/6944d4045a9fe6d96e1f668d_vv-webclip.png"
-                    alt="Levver"
-                    style="display:block; width:100%; height:auto; border:0; outline:none; text-decoration:none;"
-                  />
-                </div>
-              </td>
-            </tr>
+  const formattedPhone = formatPhone(phoneRaw);
+  const telClean = phoneRaw.replace(/\D/g, '');
 
-          </table>
+  document.getElementById('sigName').innerText = name;
+  document.getElementById('sigTitle').innerText = title;
 
-        </div>
+  const phoneLink = document.getElementById('sigPhone');
+  phoneLink.innerText = formattedPhone || '555-555-5555';
+  phoneLink.href = telClean ? 'tel:+' + telClean : '#';
 
-      </td>
+  const emailLink = document.getElementById('sigEmail');
+  emailLink.innerText = email;
+  emailLink.href = email ? 'mailto:' + email : '#';
+}
 
-    </tr>
-  </table>
+function copySignature() {
+  const signature = document.getElementById('signatureContent');
+  const range = document.createRange();
+  range.selectNodeContents(signature);
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  selection.addRange(range);
+  document.execCommand('copy');
+  selection.removeAllRanges();
+  alert("Signature copied. Paste into Gmail signature settings.");
+}
+
+document.querySelectorAll('input').forEach(input => {
+  input.addEventListener('input', updateSignature);
+});
+
+</script>
 
 </body>
 </html>
