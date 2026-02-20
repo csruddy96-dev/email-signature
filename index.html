@@ -128,8 +128,10 @@ function updateSignature() {
   document.getElementById('sigPhone').innerText = formattedPhone || '555-555-5555';
 
   const emailLink = document.getElementById('sigEmail');
-  emailLink.innerText = email;
-  emailLink.href = email ? 'mailto:' + email : '#';
+const emailText = document.getElementById('sigEmailText');
+
+emailText.innerText = email;
+emailLink.href = email ? 'mailto:' + email : '#';
 }
 
 function copySignature() {
