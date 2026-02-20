@@ -7,102 +7,99 @@
 
 <body style="font-family: Arial, Helvetica, sans-serif; padding:40px;">
 
-  <h2>Levver Email Signature Generator</h2>
+<h2>Levver Email Signature Generator</h2>
 
-  <!-- ================= FORM ================= -->
+<!-- ================= FORM ================= -->
 
-  <div style="margin-bottom:30px;">
+<div style="margin-bottom:30px;">
 
-    <div>
-      <label>Name</label><br>
-      <input type="text" id="nameInput" style="width:300px;">
-    </div>
+  <div>
+    <label>Name</label><br>
+    <input type="text" id="nameInput" style="width:300px;">
+  </div>
 
-    <div style="margin-top:10px;">
-      <label>Title</label><br>
-      <input type="text" id="titleInput" style="width:300px;">
-    </div>
+  <div style="margin-top:10px;">
+    <label>Title</label><br>
+    <input type="text" id="titleInput" style="width:300px;">
+  </div>
 
-    <div style="margin-top:10px;">
-      <label>Phone</label><br>
-      <input type="text" id="phoneInput" style="width:300px;">
-    </div>
+  <div style="margin-top:10px;">
+    <label>Phone</label><br>
+    <input type="text" id="phoneInput" style="width:300px;">
+  </div>
 
-    <div style="margin-top:10px;">
-      <label>Email</label><br>
-      <input type="text" id="emailInput" style="width:300px;">
-    </div>
+  <div style="margin-top:10px;">
+    <label>Email</label><br>
+    <input type="text" id="emailInput" style="width:300px;">
+  </div>
+
+</div>
+
+
+<!-- ================= PREVIEW ================= -->
+
+<div style="margin-bottom:15px;">
+  <strong>Live Preview</strong>
+</div>
+
+<div style="border:1px solid #ddd; padding:20px; display:inline-block;">
+
+  <div id="signatureContent">
+
+    <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif;">
+      <tr>
+
+        <!-- Logo -->
+        <td style="vertical-align: top; padding: 5px 14px 0 0;">
+          <div style="width:35px;">
+            <img
+              src="https://cdn.prod.website-files.com/692b5f9aaf0da16ba4f8efc6/6944d4045a9fe6d96e1f668d_vv-webclip.png"
+              alt="Levver"
+              style="display:block; width:100%; height:auto; border:0; outline:none; text-decoration:none;"
+            />
+          </div>
+        </td>
+
+        <!-- Text -->
+        <td style="vertical-align: top; padding: 0; color:#000000;">
+
+          <div id="sigName" style="font-size:15px; font-weight:600; line-height:20px;">
+            Name
+          </div>
+
+          <div id="sigTitle" style="font-size:14px; line-height:19px;">
+            Title
+          </div>
+
+          <div style="font-size:14px; line-height:19px;">
+            Levver
+          </div>
+
+          <div id="sigPhone" style="font-size:14px; line-height:19px;">
+            555-555-5555
+          </div>
+
+          <div style="font-size:14px; line-height:19px;">
+            <a id="sigEmail"
+               href="#"
+               style="color:#000000; text-decoration:none;">
+              name@levver.io
+            </a>
+          </div>
+
+        </td>
+
+      </tr>
+    </table>
 
   </div>
 
-  <!-- ================= PREVIEW ================= -->
+</div>
 
-  <div style="margin-bottom:15px;">
-    <strong>Live Preview</strong>
-  </div>
+<div style="margin-top:20px;">
+  <button onclick="copySignature()">Copy Signature</button>
+</div>
 
-  <!-- Visible preview box (not copied) -->
-  <div style="border:1px solid #ddd; padding:20px; display:inline-block;">
-
-    <!-- Only this div gets copied -->
-    <div id="signatureContent">
-
-      <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif;">
-        <tr>
-
-          <!-- Logo -->
-          <td style="vertical-align: top; padding: 5px 14px 0 0;">
-            <div style="width:35px;">
-              <img
-                src="https://cdn.prod.website-files.com/692b5f9aaf0da16ba4f8efc6/6944d4045a9fe6d96e1f668d_vv-webclip.png"
-                alt="Levver"
-                style="display:block; width:100%; height:auto; border:0; outline:none; text-decoration:none;"
-              />
-            </div>
-          </td>
-
-          <!-- Text -->
-          <td style="vertical-align: top; padding: 0; color:#000000;">
-
-            <div id="sigName" style="font-size:15px; font-weight:600; line-height:20px;">
-              Name
-            </div>
-
-            <div id="sigTitle" style="font-size:14px; line-height:19px;">
-              Title
-            </div>
-
-            <div style="font-size:14px; line-height:19px;">
-              Levver
-            </div>
-
-            <div style="font-size:14px; line-height:19px;">
-              <a id="sigPhone"
-                 href="#"
-                 style="color:#000000 !important; text-decoration:none !important; -webkit-text-decoration:none !important; border:0; font-weight:normal;">
-                555-555-5555
-              </a>
-            </div>
-
-            <div style="font-size:14px; line-height:19px;">
-              <a id="sigEmail"
-                 href="#"
-                 style="color:#000000 !important; text-decoration:none !important; -webkit-text-decoration:none !important; border:0; font-weight:normal;">
-                name@levver.io
-              </a>
-            </div>
-
-          </td>
-
-        </tr>
-      </table>
-
-    </div>
-  </div>
-
-  <div style="margin-top:20px;">
-    <button onclick="copySignature()">Copy Signature</button>
-  </div>
 
 <script>
 
@@ -122,14 +119,10 @@ function updateSignature() {
   const email = document.getElementById('emailInput').value || 'name@levver.io';
 
   const formattedPhone = formatPhone(phoneRaw);
-  const telClean = phoneRaw.replace(/\D/g, '');
 
   document.getElementById('sigName').innerText = name;
   document.getElementById('sigTitle').innerText = title;
-
-  const phoneLink = document.getElementById('sigPhone');
-  phoneLink.innerText = formattedPhone || '555-555-5555';
-  phoneLink.href = telClean ? 'tel:+' + telClean : '#';
+  document.getElementById('sigPhone').innerText = formattedPhone || '555-555-5555';
 
   const emailLink = document.getElementById('sigEmail');
   emailLink.innerText = email;
