@@ -80,12 +80,12 @@
           </div>
 
           <div style="font-size:14px; line-height:19px;">
-  <a id="sigEmail"
-     href="#"
-     style="color:#000000; text-decoration:none;">
-    name@levver.io
-  </a>
-</div>
+            <a id="sigEmail"
+               href="#"
+               style="color:#000000; text-decoration:none;">
+              name@levver.io
+            </a>
+          </div>
 
         </td>
 
@@ -125,11 +125,8 @@ function updateSignature() {
   document.getElementById('sigPhone').innerText = formattedPhone || '555-555-5555';
 
   const emailLink = document.getElementById('sigEmail');
-const emailText = document.getElementById('sigEmailText');
-
-const emailText = document.getElementById('sigEmailText');
-emailText.innerText = email;
-emailLink.href = email ? 'mailto:' + email : '#';
+  emailLink.innerText = email;
+  emailLink.href = email ? 'mailto:' + email : '#';
 }
 
 function copySignature() {
